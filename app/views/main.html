@@ -6,15 +6,22 @@
 </div>
 
 <div class="jumbotron">
-  <h1>BarcampSPS</h1>
+  <h1>Barcamp SPS</h1>
   <p class="lead">
-    <input type="text">
+    <input type="text" class="textcode" placeholder="Ingresa un codigo">
+      <a class="btn btn-lg btn-success textcode-btn" ng-href="#">
+          <span class="glyphicon glyphicon-ok"></span>
+      </a>
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Introducir!<span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
 
 <div class="row marketing">
-    <h4> Tombola </h4>
+    <h4 style="text-align: center"> En la Tombola </h4>
+    <ul>
+        <li ng-repeat="user in raffleUsers">
+            {{user.attributes.Name}}
+        </li>
+    </ul>
 </div>
 
 <div class="footer">
