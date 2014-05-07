@@ -59,6 +59,15 @@ body {
   margin-top: 28px;
 }
 
+.textcode{
+    font-size: 38px;
+    line-height: 1.33;
+}
+
+.textcode-btn{
+    margin-bottom: 18px;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
