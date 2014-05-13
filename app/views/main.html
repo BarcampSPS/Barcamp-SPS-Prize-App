@@ -8,10 +8,15 @@
 <div class="jumbotron">
   <h1>Barcamp SPS</h1>
   <p class="lead">
-    <input type="text" class="textcode" placeholder="Ingresa un codigo">
-      <a class="btn btn-lg btn-success textcode-btn" ng-href="#">
-          <span class="glyphicon glyphicon-ok"></span>
-      </a>
+      <form ng-submit="AddCode()">
+            <input type="text" class="textcode" placeholder="Ingresa un codigo" ng-model="code">
+            <button type="submit" class="btn btn-lg btn-success textcode-btn" ng-click="">
+                <span class="glyphicon glyphicon-ok"></span>
+            </button>
+            <div>
+                <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+            </div>
+      </form>
   </p>
 </div>
 

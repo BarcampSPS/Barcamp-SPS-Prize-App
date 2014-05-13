@@ -1,0 +1,14 @@
+<div class="modal-header">
+    <h3 class="modal-title">Codigo Valido!</h3>
+</div>
+<div class="modal-body">
+    <h3>Ingresa tus datos</h3>
+    <form>
+        <input type="text" placeholder="Ingresa tu nombre" ng-model="RaffleUser.Name" required>
+        <input type="email" placeholder="Ingresa tu correo electronico" ng-model="RaffleUser.Email" required>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="guardar()">Guardar</button>
+    <button class="btn btn-danger" ng-click="cancelar()">Cancelar</button>
+</div>
