@@ -20,17 +20,27 @@ angular.module('barcampPrizeAppApp')
             alert(error);
         };
 
+        var ShowAlert = function(msg, type, interval){
+            $scope.alerts.push({msg: msg,type: type});
+            $scope.$apply();
+            setTimeout(RemoveAllAlerts, interval);
+        };
+
+        var RemoveAllAlerts = function(){
+            $scope.alerts = [];
+            $scope.$apply();
+        };
+
         var AddCodeSuccess = function(result){
             if(result == undefined ){
                 $scope.code = '';
-                $scope.alerts.push({msg: 'Codigo Invalido!',type: 'danger'});
-                $scope.$apply();
+                ShowAlert('Codigo Invalido!', 'danger', 4000)
                 return;
             }
 
             if(result.get('Used') == true){
                 $scope.code = '';
-                $scope.alerts.push({msg: 'Codigo ya ha sido utilizado!',type: 'danger'});
+                ShowAlert('Codigo ya ha sido utilizado!', 'danger',4000);
                 $scope.$apply();
                 return;
             }
@@ -78,6 +88,10 @@ angular.module('barcampPrizeAppApp')
 
         var ErrorCodeSuccess = function(error){
 
+        };
+
+        $scope.closeAlert = function(index) {
+            $scope.alerts.splice(index, 1);
         };
 
         $scope.AddCode = function(){
