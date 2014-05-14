@@ -4,3 +4,5 @@ dist
 .sass-cache
 app/bower_components
 app/scripts/services/ParseCredentialService.js
+.DS_Store
+.idea
