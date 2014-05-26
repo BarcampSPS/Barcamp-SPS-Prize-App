@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('barcampPrizeAppApp')
-  .controller('TombolaController', ['$scope','$modal','ParseService','RaffleUsersService','CodeService',
-        function ($scope,$modal,ParseService,RaffleUsersService,CodeService) {
+  .controller('TombolaController', ['$scope','$modal','ParseService','RaffleUsersService',
+        function ($scope,$modal,ParseService,RaffleUsersService) {
 
             var getRandom = function(n){
                 return Math.floor(Math.random()*n);
