@@ -74,6 +74,11 @@ body {
     width: 100%;
 }
 
+@import url('fonts/glyphicons-halflings-regular.ttf');
+@import url('fonts/glyphicons-halflings-regular.eot');
+@import url('fonts/glyphicons-halflings-regular.svg');
+@import url('fonts/glyphicons-halflings-regular.woff');
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
