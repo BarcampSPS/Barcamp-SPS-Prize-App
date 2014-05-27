@@ -18,6 +18,10 @@ angular
             templateUrl : 'views/tombola.html',
             controller: 'TombolaController'
         })
+        .when('/AgregarCodigo',{
+            templateUrl : 'views/agregarCodigo.html',
+            controller : 'AgregarCodigoController'
+        })
       .otherwise({
         redirectTo: '/'
       });
