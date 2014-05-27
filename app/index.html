@@ -24,11 +24,11 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
+    <div class="header" ng-controller="HeaderController">
         <ul class="nav nav-pills pull-right">
-            <li ><a ng-href="#/">Inicio</a></li>
-            <li ><a ng-href="#/tombola">Tombola</a></li> <!-- class="active" -->
-            <li ><a ng-href="#/AgregarCodigo">Agregar Codigo</a></li>
+            <li ng-class="{ active: isActive('/') }" ><a ng-href="#/">Inicio</a></li>
+            <li ng-class="{ active: isActive('/tombola') }" ><a ng-href="#/tombola">Tombola</a></li>
+            <li ng-class="{ active: isActive('/AgregarCodigo') }" ><a ng-href="#/AgregarCodigo">Agregar Codigo</a></li>
         </ul>
         <h3 class="text-muted">Premios Barcamp San Pedro Sula</h3>
     </div>
@@ -74,6 +74,7 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/src/parse-1.2.18.min.js"></script>
         <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/headerController.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/services/ParseCredentialService.js"></script>
         <script src="scripts/services/ParseService.js"></script>
@@ -81,6 +82,7 @@
         <script src="scripts/services/CodeService.js"></script>
         <script src="scripts/controllers/tombola.js"></script>
         <script src="scripts/controllers/agregarCodigo.js"></script>
+
         <!-- endbuild -->
 </body>
 </html>
