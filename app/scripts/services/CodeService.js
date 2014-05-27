@@ -13,11 +13,24 @@ angular.module('barcampPrizeAppApp')
                 success: callbacks.success,
                 error: callbacks.error
             });
-        }
+        };
 
         factory.MarkCodeAsUsed = function(Code){
             Code.save();
-        }
+        };
+
+        factory.AddCode = function(Codigo, callbacks){
+            var Codes = Parse.Object.extend("Codes");
+            var code = new Codes();
+
+            code.set('Code', Codigo.codigo);
+            code.set('Used', false);
+
+            code.save(null, {
+                success : callbacks.success,
+                error : callbacks.error
+            });
+        };
 
         return factory;
     }]);
