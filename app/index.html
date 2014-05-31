@@ -28,7 +28,7 @@
         <ul class="nav nav-pills pull-right">
             <li ng-class="{ active: isActive('/') }" ><a ng-href="#/">Inicio</a></li>
             <li ng-class="{ active: isActive('/tombola') }" ><a ng-href="#/tombola">Tombola</a></li>
-            <li ng-class="{ active: isActive('/AgregarCodigo') }" ><a ng-href="#/AgregarCodigo">Agregar Codigo</a></li>
+            <li ng-class="{ active: isActive('/agregarCodigo') }" ><a ng-href="#/agregarCodigo">Agregar Codigo</a></li>
         </ul>
         <h3 class="text-muted">Premios Barcamp San Pedro Sula</h3>
     </div>
@@ -82,7 +82,8 @@
         <script src="scripts/services/CodeService.js"></script>
         <script src="scripts/controllers/tombola.js"></script>
         <script src="scripts/controllers/agregarCodigo.js"></script>
-
+        <script src="scripts/services/UserService.js"></script>
+        <script src="scripts/controllers/login.js"></script>
         <!-- endbuild -->
 </body>
 </html>
