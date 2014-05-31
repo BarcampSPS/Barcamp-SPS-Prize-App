@@ -18,9 +18,13 @@ angular
             templateUrl : 'views/tombola.html',
             controller: 'TombolaController'
         })
-        .when('/AgregarCodigo',{
+        .when('/agregarCodigo',{
             templateUrl : 'views/agregarCodigo.html',
             controller : 'AgregarCodigoController'
+        })
+        .when('/login/:redirectPath',{
+            templateUrl : 'views/login.html',
+            controller: 'LoginController'
         })
       .otherwise({
         redirectTo: '/'

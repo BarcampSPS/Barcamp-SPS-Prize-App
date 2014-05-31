@@ -1,14 +1,19 @@
 'use strict';
 
 angular.module('barcampPrizeAppApp')
-  .controller('TombolaController', ['$scope','$modal','ParseService','RaffleUsersService',
-        function ($scope,$modal,ParseService,RaffleUsersService) {
+  .controller('TombolaController', ['$scope','$modal','$location','ParseService','RaffleUsersService','UserService',
+        function ($scope,$modal,$location,ParseService,RaffleUsersService,UserService) {
 
             var getRandom = function(n){
                 return Math.floor(Math.random()*n);
             };
 
             var init = function(){
+                //Check if valid System user is logged In
+                if(UserService.GetCurrentUser() == null){
+                    $location.path('/login/tombola');
+                }
+
                 var callbacks = {success: success, error: error};
                 RaffleUsersService.populateRaffleUsers(callbacks);
             };

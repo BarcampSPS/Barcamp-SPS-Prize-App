@@ -2,9 +2,15 @@
  * Created by richardsiwady on 5/26/14.
  */
 angular.module('barcampPrizeAppApp')
-    .controller('AgregarCodigoController', ['$scope','$modal','ParseService','CodeService',
-        function($scope, $modal, ParseService, CodeService){
+    .controller('AgregarCodigoController', ['$scope','$modal','$location','ParseService','CodeService','UserService',
+        function($scope, $modal,$location, ParseService, CodeService,UserService){
 
+            var init = function(){
+                //Check if valid System user is logged In
+                if(UserService.GetCurrentUser() == null){
+                    $location.path('/login/agregarCodigo');
+                }
+            };
 
             var success = function(obj){
                 alert('Code Added Successfully');
@@ -22,4 +28,6 @@ angular.module('barcampPrizeAppApp')
                 CodeService.AddCode($scope.Codigo, callbacks);
             };
 
+
+            init();
         }]);
